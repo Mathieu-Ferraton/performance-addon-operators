@@ -1,7 +1,7 @@
-FROM quay.io/operator-framework/upstream-opm-builder
+FROM quay.io/mferrato/upstream-opm-builder
 
 RUN opm index add \
 --mode semver \
---bundles quay.io/openshift-kni/performance-addon-operator-bundle:4.7-snapshot \
+--bundles quay.io/mferrato/performance-addon-operator-bundle \
 --out-dockerfile index.Dockerfile \
 --generate
