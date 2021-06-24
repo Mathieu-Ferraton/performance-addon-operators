@@ -4,14 +4,14 @@ REGISTRY_NAMESPACE ?= "openshift-kni"
 IMAGE_TAG ?= "4.7-snapshot"
 
 TARGET_GOOS=linux
-TARGET_GOARCH=amd64
+TARGET_GOARCH=$(shell go env GOARCH)
 
 CACHE_DIR="_cache"
 TOOLS_DIR="$(CACHE_DIR)/tools"
 TOOLS_BIN_DIR="build/_output/bin"
 
 OPERATOR_SDK_VERSION="v1.0.0"
-OPERATOR_SDK_PLATFORM ?= "x86_64-linux-gnu"
+OPERATOR_SDK_PLATFORM ?= "$(shell uname -m)-linux-gnu"
 OPERATOR_SDK_BIN="operator-sdk-$(OPERATOR_SDK_VERSION)-$(OPERATOR_SDK_PLATFORM)"
 OPERATOR_SDK="$(TOOLS_DIR)/$(OPERATOR_SDK_BIN)"
 

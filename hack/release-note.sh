@@ -12,7 +12,7 @@ PREREF=${PREREF:-$(git describe --abbrev=0 --tags $RELREF^)}
 
 RELSPANREF=$PREREF..$RELREF
 
-GHRELURL="https://github.com/openshift-kni/performance-addon-operators/releases/tag/"
+GHRELURL="https://github.com/mferrato/performance-addon-operators/releases/tag/"
 RELURL="$GHRELURL$RELREF"
 
 CHANGES_COUNT=$(git log --oneline $RELSPANREF | wc -l)
@@ -38,3 +38,4 @@ https://quay.io/organization/openshift-kni
 *TODO*
 
 EOF
+
